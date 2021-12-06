@@ -22,7 +22,7 @@ import 'styles/tabla.css';
 // import PrivateRoute from 'components/PrivateRoute';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000/graphql',
+  uri: 'https://servidor-gql-mintic-4.herokuapp.com/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
