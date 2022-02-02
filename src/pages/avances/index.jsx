@@ -66,20 +66,22 @@ const Avance = ({ avance }) => {
           <span>Sin Observaciones</span>
         ) : (
           <>
-            {avance.observaciones.map((obs, index) => (
-              <div
-                key={nanoid()}
-                className='bg-white w-32 m-2 p-2 rounded-lg shadow-lg flex flex-col'
-              >
-                <span>
-                  {index + 1}. {obs}
-                </span>
-                <div className='flex items-end justify-center my-2'>
-                  <i className='fas fa-pen mx-2' />
-                  <i className='fas fa-trash mx-2' />
+            {avance.observaciones.map((obs, index) => {
+              return (
+                <div
+                  key={nanoid()}
+                  className='bg-white w-32 m-2 p-2 rounded-lg shadow-lg flex flex-col'
+                >
+                  <span>
+                    {index + 1}. {obs}
+                  </span>
+                  <div className='flex items-end justify-center my-2'>
+                    <i className='fas fa-pen mx-2' />
+                    <i className='fas fa-trash mx-2' />
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </>
         )}
       </div>
