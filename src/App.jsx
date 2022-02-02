@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import PrivateLayout from 'layouts/PrivateLayout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserContext } from 'context/userContext';
-import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
+import {
+  ApolloProvider,
+  ApolloClient,
+  createHttpLink,
+  InMemoryCache,
+} from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Index from 'pages/Index';
 import Page2 from 'pages/Page2';
@@ -18,11 +23,16 @@ import IndexProyectos from 'pages/proyectos/Index';
 import jwt_decode from 'jwt-decode';
 import 'styles/globals.css';
 import 'styles/tabla.css';
+import NuevoProyecto from 'pages/proyectos/NuevoProyecto';
+import IndexInscripciones from 'pages/inscripciones';
+import Profile from 'pages/profile';
+import IndexAvance from 'pages/avances';
 
 // import PrivateRoute from 'components/PrivateRoute';
 
 const httpLink = createHttpLink({
-  uri: 'https://servidor-gql-mintic-4.herokuapp.com/graphql',
+  // uri: 'https://servidor-gql-mintic.herokuapp.com/graphql',
+  uri: 'http://localhost:4000/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -47,7 +57,6 @@ function App() {
   const [authToken, setAuthToken] = useState('');
 
   const setToken = (token) => {
-    console.log('set token', token);
     setAuthToken(token);
     if (token) {
       localStorage.setItem('token', JSON.stringify(token));
@@ -66,6 +75,7 @@ function App() {
         identificacion: decoded.identificacion,
         correo: decoded.correo,
         rol: decoded.rol,
+        foto: decoded.foto,
       });
     }
   }, [authToken]);
@@ -79,8 +89,15 @@ function App() {
               <Route path='/' element={<PrivateLayout />}>
                 <Route path='' element={<Index />} />
                 <Route path='/usuarios' element={<IndexUsuarios />} />
-                <Route path='/usuarios/editar/:_id' element={<EditarUsuario />} />
+                <Route
+                  path='/usuarios/editar/:_id'
+                  element={<EditarUsuario />}
+                />
                 <Route path='/proyectos' element={<IndexProyectos />} />
+                <Route path='/proyectos/nuevo' element={<NuevoProyecto />} />
+                <Route path='/inscripciones' element={<IndexInscripciones />} />
+                <Route path='/avances/:projectid' element={<IndexAvance />} />
+                <Route path='/perfil' element={<Profile />} />
                 <Route path='page2' element={<Page2 />} />
                 <Route path='category1' element={<IndexCategory1 />} />
                 <Route path='category1/page1' element={<Category1 />} />
