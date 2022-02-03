@@ -15,15 +15,15 @@ const NuevoProyecto = () => {
   const { form, formData, updateFormData } = useFormData();
   const [listaUsuarios, setListaUsuarios] = useState({});
 
-  // falta captura del error del query.
+  // falta captura del error del query
   const { data, loading } = useQuery(GET_USUARIOS, {
     variables: {
       filtro: { rol: 'LIDER', estado: 'AUTORIZADO' },
     },
   });
 
-  // falta mensaje de success.
-  // falta captura del error de la mutacion y revisar si se debe agregar el loading.
+  // falta mensaje de success
+  // falta captura del error de la mutacion y revisar si se debe agregar el loading
   const [crearProyecto] = useMutation(CREAR_PROYECTO);
 
   useEffect(() => {

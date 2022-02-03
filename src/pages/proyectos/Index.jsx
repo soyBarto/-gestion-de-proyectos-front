@@ -119,8 +119,8 @@ const AccordionProyecto = ({ proyecto }) => {
 const FormEditProyecto = ({ _id }) => {
   const { form, formData, updateFormData } = useFormData();
 
-  // falta capturar error de la mutacion.
-  // falta toast de success.
+  // falta capturar error de la mutacion
+  // falta toast de success
   const [editarProyecto, { loading }] = useMutation(EDITAR_PROYECTO);
 
   const submitForm = (e) => {
