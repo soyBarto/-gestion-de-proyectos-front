@@ -5,9 +5,9 @@ const Index = () => (
     <div className='bg-green-300 h-96'>
       Esta es una pagina que esta en estado de desarrollo, test 2
     </div>
-    <div className='bg-green-300 h-96'>Index page</div>
-    <div className='bg-green-300 h-96'>Index page</div>
-    <div className='bg-green-300 h-96'>Index page</div>
+    <div className='bg-green-300 h-96'>Index page 1</div>
+    <div className='bg-green-300 h-96'>Index page 2</div>
+    <div className='bg-green-300 h-96'>Index page 3</div>
   </div>
 );
 
