@@ -16,8 +16,8 @@ import { UserContext } from 'context/userContext';
 import Profile from 'pages/profile';
 
 const httpLink = createHttpLink({
-  // uri: 'https://servidor-gql-mintic.herokuapp.com/graphql',
-  uri: 'http://localhost:4000/graphql',
+  uri: 'https://servidor-gql-mintic.herokuapp.com/graphql',
+  // uri: 'http://localhost:4000/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -43,7 +43,7 @@ it('fetches info from backend', async () => {
       <UserContext.Provider
         value={{
           userData: {
-            _id: '61a1150c351c7c00e8eb0be9',
+            _id: '61afcbf921c2d93aaa848d8f',
           },
         }}
       >
@@ -60,7 +60,7 @@ it('fetches info from backend', async () => {
 
   const input = screen.getByTestId('name-input');
 
-  fireEvent.change(input, { target: { value: 'Daniel' } });
+  fireEvent.change(input, { target: { value: 'Jose' } });
 
   //   expect(input.value).toBe('Daniel');
 
