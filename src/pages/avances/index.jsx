@@ -16,7 +16,7 @@ const IndexAvance = () => {
   const { projectid } = useParams();
   const [openDialog, setOpenDialog] = useState(false);
 
-  // falta captura de error del loading
+  // falta captura de error del loading.
   const { data, loading } = useQuery(GET_AVANCES, {
     variables: {
       project: projectid,
