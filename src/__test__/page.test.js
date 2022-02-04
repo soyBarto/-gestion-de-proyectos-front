@@ -16,7 +16,7 @@ import { UserContext } from 'context/userContext';
 import Profile from 'pages/profile';
 
 const httpLink = createHttpLink({
-  uri: 'https://servidor-gql-mintic.herokuapp.com/graphql',
+  uri: 'https://servidor-gql-mintic-4.herokuapp.com/graphql',
   // uri: 'http://localhost:4000/graphql',
 });
 
