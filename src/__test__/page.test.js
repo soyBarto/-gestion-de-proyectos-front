@@ -55,7 +55,7 @@ it('fetches info from backend', async () => {
 
   waitFor(() => {
     expect(screen.getByTestId('perfil')).toHaveTextContent(
-      'Perfil del usuario'
+      'Loading...'
     );
   });
 
